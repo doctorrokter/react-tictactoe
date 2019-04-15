@@ -39,6 +39,7 @@ function App() {
           if (isPlayerWon(winningPositions, newStats[player])) {
             setWinningPosition(getWinningPosition(winningPositions, newStats[player]));
             setGameOver(true);
+            return;
           }
         }
 
@@ -63,7 +64,7 @@ function App() {
     <div className="App">
       {
         gameOver &&
-          <h2 className="title">Player {player} Won!</h2>
+          <h2 className="title">Player {player + 1} Won!</h2>
       }
       <Table onCellClick={onClick}
              matrixSize={matrixSize}
