@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-tictactoe/static/css/main.5e9521c2.chunk.css"
   },
   {
-    "revision": "32b9b5ebc87a76cc2dbe052027c08390",
+    "revision": "f0c5723b7520d3beead62204d21069bd",
     "url": "/react-tictactoe/index.html"
   }
 ];
