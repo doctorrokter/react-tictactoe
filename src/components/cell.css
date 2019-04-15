@@ -1,0 +1,50 @@
+.cell {
+    width: 100px;
+    height: 100px;
+    background: lightgray;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.cell.clicked-p-1 {
+    background: #61dafb;
+}
+
+.cell.clicked-p-2 {
+    background: goldenrod;
+}
+
+.cell.winning {
+    box-shadow: 0 0 10px 1px white;
+    border: 1px solid white;
+    animation: zoomRotate 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+.cell:active {
+    opacity: 0.5;
+}
+
+.cell-value {
+    font-size: 1.5em;
+}
+
+@keyframes zoomRotate {
+    0% {
+        transform: scale3d(1, 1, 1);
+        transform: rotate(90deg);
+    }
+    25% {
+        transform: scale3d(0.5, 0.5, 0.5);
+    }
+    75% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
