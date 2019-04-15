@@ -43,6 +43,15 @@ function App() {
           }
         }
 
+        if (clickedCells.length === ((matrixSize * matrixSize) - 1)) {
+          setPlayer(-1);
+          setGameOver(true);
+          setTimeout(() => {
+            startAgain();
+          }, 1500);
+          return;
+        }
+
         if (player === player1) {
           setPlayer(player2);
         } else {
@@ -60,18 +69,22 @@ function App() {
     setWinningPosition([]);
   }
 
+  let playerWon = gameOver && player !== -1;
+  let nobodyWon = player === -1;
+
   return (
     <div className="App">
       {
-        gameOver &&
+        playerWon &&
           <h2 className="title">Player {player + 1} Won!</h2>
       }
       <Table onCellClick={onClick}
              matrixSize={matrixSize}
              winningPosition={winningPosition}
+             nobodyWon={nobodyWon}
              stats={stats}/>
       {
-        gameOver &&
+        playerWon &&
         <button className="start-btn" onClick={startAgain}>
           <span>Start Again!</span>
         </button>

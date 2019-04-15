@@ -3,7 +3,7 @@ import {hasCell} from "../helpers/helpers";
 import Cell from "./cell";
 import './table.css';
 
-function Table({onCellClick, stats, matrixSize, winningPosition}) {
+function Table({onCellClick, stats, matrixSize, winningPosition, nobodyWon}) {
   let rows = [];
 
   for (let i = 0; i < matrixSize; i++) {
@@ -36,6 +36,7 @@ function Table({onCellClick, stats, matrixSize, winningPosition}) {
                   Component = null;
 
                   className += hasCell(winningPosition, [cell.i, cell.j]) ? ' winning' : '';
+                  className += nobodyWon ? ' flush' : '';
 
                   return (
                     <Cell key={`i_${cell.i}_j_${cell.j}`}

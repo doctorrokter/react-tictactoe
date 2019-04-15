@@ -25,6 +25,13 @@
     animation-iteration-count: 1;
 }
 
+.cell.flush {
+    background: lightgray;
+    animation: zoomRotate 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
 .cell:active {
     opacity: 0.5;
 }
