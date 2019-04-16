@@ -8,6 +8,7 @@ import {
   isPlayerWon,
   getWinningPosition,
 } from './helpers/helpers';
+import soundBlaster from './helpers/soundBlaster';
 
 const matrixSize = 3;
 const player1 = 0;
@@ -23,6 +24,8 @@ function App() {
   let [winningPosition, setWinningPosition] = useState([]);
 
   function onClick(i, j) {
+    soundBlaster.play(440);
+
     if (!gameOver) {
       let cell = [i, j];
 
